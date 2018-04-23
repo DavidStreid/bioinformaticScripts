@@ -33,7 +33,7 @@ attributes <- listAttributes(snp_ensembl)
 # attributes[order(attriburtes$name),]
 
 query_attributes <- c("refsnp_id", "refsnp_source", "chr_name", "chrom_start", "chrom_end", "translation_start", "translation_end", "consequence_type_tv", "sift_prediction", "polyphen_prediction")
-query_filters <- c("phenotype_source")
+query_filter <- "phenotype_source"
 query <- c("Clinvar")
 
-getBM(attributes = query_attributes, filters = query_filters, values = query, mart = snp_ensembl)
+getBM(attributes = query_attributes, filters = query_filter, values = query, mart = snp_ensembl)
